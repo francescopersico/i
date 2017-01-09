@@ -3,6 +3,14 @@ organization in ThisBuild := "com.livelygig"
 // the Scala version that will be used for cross-compiled libraries
 scalaVersion in ThisBuild := "2.11.8"
 
+resolvers ++= Seq(
+  "Scalaz Bintray Repo" at "https://dl.bintray.com/scalaz/releases",
+  "Atlassian Releases" at "https://maven.atlassian.com/public/",
+  Resolver.jcenterRepo,
+  Resolver.sonatypeRepo("snapshots"),
+  Resolver.bintrayRepo("denigma", "denigma-releases")
+)
+
 // a special crossProject for configuring a JS/JVM/shared structure
 lazy val shared = (crossProject.crossType(CrossType.Pure) in file("shared"))
   .settings(
@@ -55,9 +63,8 @@ lazy val webGateway = (project in file("web-gateway"))
   .dependsOn(sharedJvm)
   .settings(
     scalacOptions ++= Settings.scalacOptions,
-    resolvers += sbt.Resolver.bintrayRepo("denigma", "denigma-releases"), //add resolver
     libraryDependencies ++= Settings.jvmDependencies.value,
-    libraryDependencies += lagomScaladslServer,
+    libraryDependencies ++= Seq(lagomScaladslServer,filters),
     commands += ReleaseCmd,
     compile in Compile := ((compile in Compile) dependsOn scalaJSPipeline).value,
     devCommands in scalaJSPipeline += "runAll",

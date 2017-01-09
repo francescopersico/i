@@ -35,7 +35,15 @@ object Settings {
     "org.webjars" % "font-awesome" % Versions.fontAwesome % Provided,
     "org.webjars" % "bootstrap" % Versions.bootstrap % Provided,
     "com.softwaremill.macwire" %% "macros" % "2.2.5" % "provided",
-    "be.objectify" %% "deadbolt-scala" % "2.5.1"
+    "be.objectify" %% "deadbolt-scala" % "2.5.1",
+    "com.mohiva" %% "play-silhouette" % "4.0.0",
+    "com.mohiva" %% "play-silhouette-password-bcrypt" % "4.0.0",
+    "com.mohiva" %% "play-silhouette-crypto-jca" % "4.0.0",
+    "com.mohiva" %% "play-silhouette-persistence" % "4.0.0",
+    "com.mohiva" %% "play-silhouette-testkit" % "4.0.0" % "test",
+    "com.iheart" %% "ficus" % "1.4.0",
+    "com.typesafe.play" %% "play-mailer" % "5.0.0"
+
   ))
 
   /** Dependencies only used by the JS project (note the use of %%% instead of %%) */
