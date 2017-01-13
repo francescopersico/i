@@ -2,7 +2,7 @@ resolvers ++= Seq(
 
 )
 
-addSbtPlugin("org.scala-js" % "sbt-scalajs" % "0.6.13")
+addSbtPlugin("org.scala-js" % "sbt-scalajs" % "0.6.14")
 
 addSbtPlugin("com.typesafe.sbt" % "sbt-less" % "1.0.6")
 

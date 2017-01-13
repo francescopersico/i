@@ -14,7 +14,7 @@ import scala.concurrent.ExecutionContext
 /**
   * Created by shubham.k on 29-12-2016.
   */
-class MessageController(messageService: MessageService) (implicit env: Environment, ec: ExecutionContext) extends Controller{
+class MessageController1(messageService: MessageService) (implicit env: Environment, ec: ExecutionContext) extends Controller{
   def addMessage = Action.async { implicit rh =>
         messageService.addMessage
           .handleRequestHeader(authenticate(rh))

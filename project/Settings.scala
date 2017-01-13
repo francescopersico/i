@@ -1,4 +1,5 @@
 import org.scalajs.sbtplugin.ScalaJSPlugin.autoImport._
+import play.sbt.PlayImport.{cache, filters, specs2, ws}
 import sbt._
 
 /**
@@ -34,15 +35,36 @@ object Settings {
     "com.vmunier" %% "scalajs-scripts" % Versions.scalajsScripts,
     "org.webjars" % "font-awesome" % Versions.fontAwesome % Provided,
     "org.webjars" % "bootstrap" % Versions.bootstrap % Provided,
-    "com.softwaremill.macwire" %% "macros" % "2.2.5" % "provided",
-    "be.objectify" %% "deadbolt-scala" % "2.5.1",
-    "com.mohiva" %% "play-silhouette" % "4.0.0",
-    "com.mohiva" %% "play-silhouette-password-bcrypt" % "4.0.0",
-    "com.mohiva" %% "play-silhouette-crypto-jca" % "4.0.0",
-    "com.mohiva" %% "play-silhouette-persistence" % "4.0.0",
-    "com.mohiva" %% "play-silhouette-testkit" % "4.0.0" % "test",
-    "com.iheart" %% "ficus" % "1.4.0",
-    "com.typesafe.play" %% "play-mailer" % "5.0.0"
+
+    "com.mohiva" %% "play-silhouette" % "4.0.0-BETA4",
+    "com.mohiva" %% "play-silhouette-password-bcrypt" % "4.0.0-BETA4",
+    "com.mohiva" %% "play-silhouette-persistence-memory" % "4.0.0-BETA4",
+    "org.webjars" %% "webjars-play" % "2.5.0",
+    "net.codingwell" %% "scala-guice" % "4.0.1",
+    "com.iheart" %% "ficus" % "1.2.3",
+    "com.adrianhurt" %% "play-bootstrap" % "1.0-P25-B3",
+    "com.mohiva" %% "play-silhouette-testkit" % "4.0.0-BETA4" % "test",
+    specs2 % Test,
+    cache,
+    filters,
+    "com.softwaremill.macwire" %% "macros" % "1.0.7",
+    "com.softwaremill.macwire" %% "runtime" % "1.0.7",
+    ws,
+
+    //"com.mohiva" %% "play-silhouette" % "4.0.0",
+    //"com.mohiva" %% "play-silhouette-password-bcrypt" % "4.0.0",
+    "com.mohiva" %% "play-silhouette-persistence" % "4.0.0-BETA4",
+//    "com.mohiva" %% "play-silhouette-crypto-jca" % "4.0.0",
+    //"org.webjars" %% "webjars-play" % "2.5.0-2",
+    //"net.codingwell" %% "scala-guice" % "4.0.1",
+    //"com.iheart" %% "ficus" % "1.2.6",
+    "com.typesafe.play" %% "play-mailer" % "5.0.0",
+    "com.enragedginger" %% "akka-quartz-scheduler" % "1.5.0-akka-2.4.x"
+    //"com.adrianhurt" %% "play-bootstrap" % "1.0-P25-B3",
+    //"com.mohiva" %% "play-silhouette-testkit" % "4.0.0" % "test",
+    //specs2 % Test,
+    //cache,
+    //filters
 
   ))
 
